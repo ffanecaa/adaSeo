@@ -69,6 +69,7 @@ a{
 
 .copyr{
    position: absolute;
+   display: flex;
    bottom: 32px;
    left: 32px;
 }
@@ -201,7 +202,7 @@ a{
   .container {
     flex-direction: column;
     width: 100vw;
-    height: auto; /* que crezca con el contenido */
+    height: auto; 
   }
 
   /* Sidebar / menu lateral pasa arriba */
@@ -214,6 +215,7 @@ a{
     align-items: center;
     background-color: #87e5b014;
   }
+
 
   /* Logo más compacto */
   .logo {
@@ -295,4 +297,8 @@ a{
     margin: 16px 0;
   }
 
+}
+
+.copyr{
+  display: none;
 }
