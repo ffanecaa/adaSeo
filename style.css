@@ -7,17 +7,24 @@
 
 :root{
 
-  --ff-body:"Lato", sans-serif;
+ 
   --ff-title:"Merriweather",serif;
   --ff-logo:"Archivo Black",serif;
   --ff-dos:"Irish Grover",serif;
 
 
-  --ff-f3:  "Orbitron", sans-serif;
+
+
 
 
 }
 
+a{
+  
+  all: unset;
+  cursor: pointer;
+
+}
 .container{
     display: flex;
     width: 100vw;
