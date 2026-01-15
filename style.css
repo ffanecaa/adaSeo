@@ -276,6 +276,18 @@ a{
     width: 100%;
     height: auto;
   }
+  .image_slider {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* altura fija para móvil */
+  overflow: hidden;
+}
+
+.slider_track img {
+  width: 100%;
+  height: 100%;       /* fuerza que ocupe el contenedor */
+  object-fit: cover;  /* mantiene proporción sin deformar */
+}
 
   /* Flechas más pequeñas */
   .slider_btn {
