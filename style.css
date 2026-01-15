@@ -191,3 +191,108 @@ a{
 
 .prev{ left: 16px; }
 .next{ right: 16px; }
+
+
+
+/* Móviles: hasta 768px */
+@media (max-width: 768px) {
+
+  /* Contenedor principal */
+  .container {
+    flex-direction: column;
+    width: 100vw;
+    height: auto; /* que crezca con el contenido */
+  }
+
+  /* Sidebar / menu lateral pasa arriba */
+  .container_left {
+    width: 100%;
+    height: auto;
+    padding: 16px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #87e5b014;
+  }
+
+  /* Logo más compacto */
+  .logo {
+    font-size: 32px;
+    line-height: 36px;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .logo_apell {
+    padding-left: 0;
+  }
+
+  /* Menú más pequeño, horizontal */
+  .nav {
+    padding-top: 0;
+    padding-left: 0;
+    font-size: 20px;
+    line-height: 28px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  /* Copyr debajo del menú */
+  .copyr {
+    position: static;
+    margin-top: 12px;
+    font-size: 12px;
+  }
+
+  /* Contenedor derecho */
+  .container_right {
+    width: 100%;
+    height: auto;
+    padding: 16px;
+  }
+
+  /* Slider: una imagen visible en móvil */
+  .slider_track img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Flechas más pequeñas */
+  .slider_btn {
+    font-size: 48px;
+  }
+
+  /* Section Ada: columna */
+  .section_ada {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .image_ada {
+    width: 100%;
+    height: auto;
+  }
+
+  .container_text {
+    width: 100%;
+    padding: 16px;
+    gap: 24px;
+  }
+
+  .p_ada, .quote_ada {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* Citas / quote */
+  .container_quote {
+    width: 100%;
+    height: auto;
+    font-size: 24px;
+    line-height: 32px;
+    padding-left: 0;
+    margin: 16px 0;
+  }
+
+}
