@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="container_left">
+            <div class="logo">
+                <p class="logo_name">Ada</p>
+                <p class="logo_apell">Veiga</p>
+            </div>
+            <nav class="nav">
+                <p>Inicio</p>
+                <p>Obra</p>
+                <p>Ada</p>
+            </nav>
+            <p class="copyr">Copyright © All rights reserved 2026.</p>
+        </div>
+       <main class="container_right">
+        <div class="image_slider">
+  <button class="slider_btn prev">‹</button>
+
+  <div class="slider_track">
+    <img src="/images/img_1.jpg">
+    <img src="/images/img_3.jpg">
+    <img src="/images/img_2.jpg">
+    <img src="/images/img_9.jpg">
+    <img src="/images/img_5.jpg">
+    <img src="/images/img_11.jpg">
+    <img src="/images/img_4.jpg">
+    <img src="/images/img_8.jpg">
+    <img src="/images/img_10.jpg">
+    <img src="/images/img_7.jpg">
+    <img src="/images/img_6.jpg">
+    <img src="/images/msc.png">
+ 
+  </div>
+
+  <button class="slider_btn next">›</button>
+</div>
+    
+</div>
+
+    </main>
+    </div>
+
+<script>
+const track = document.querySelector('.slider_track');
+const slides = document.querySelectorAll('.slider_track img');
+const next = document.querySelector('.next');
+const prev = document.querySelector('.prev');
+
+let index = 0;
+const step = 2;
+const maxIndex = Math.ceil(slides.length / step) - 1;
+const intervalTime = 5000; // 5 segundos
+let autoSlide;
+
+function updateSlide(){
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function startAutoSlide(){
+  autoSlide = setInterval(() => {
+    index = index < maxIndex ? index + 1 : 0;
+    updateSlide();
+  }, intervalTime);
+}
+
+function resetAutoSlide(){
+  clearInterval(autoSlide);
+  startAutoSlide();
+}
+
+next.addEventListener('click', () => {
+  index = index < maxIndex ? index + 1 : 0;
+  updateSlide();
+  resetAutoSlide();
+});
+
+prev.addEventListener('click', () => {
+  index = index > 0 ? index - 1 : maxIndex;
+  updateSlide();
+  resetAutoSlide();
+});
+
+// INICIO
+startAutoSlide();
+</script>
+
+
+
+    
+</body>
+</html>
