@@ -269,7 +269,7 @@ a{
     object-fit: cover;
 }
 
-
+.slider_track img { width:100%; }
 
   /* Slider: una imagen visible en móvil */
   .slider_track img {

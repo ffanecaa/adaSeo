@@ -52,21 +52,22 @@
     </div>
 
 <script>
-const track = document.querySelector('.slider_track');
+    const track = document.querySelector('.slider_track');
 const slides = document.querySelectorAll('.slider_track img');
 const next = document.querySelector('.next');
 const prev = document.querySelector('.prev');
 
 let index = 0;
-const step = 2;
-const maxIndex = Math.ceil(slides.length / step) - 1;
-const intervalTime = 5000; // 5 segundos
+let step = window.innerWidth > 768 ? 2 : 1; // 2 en desktop, 1 en móvil
+let maxIndex = Math.ceil(slides.length / step) - 1;
 let autoSlide;
+const intervalTime = 5000;
 
 function updateSlide(){
   track.style.transform = `translateX(-${index * 100}%)`;
 }
 
+// Reinicia autoplay
 function startAutoSlide(){
   autoSlide = setInterval(() => {
     index = index < maxIndex ? index + 1 : 0;
@@ -79,6 +80,7 @@ function resetAutoSlide(){
   startAutoSlide();
 }
 
+// Botones
 next.addEventListener('click', () => {
   index = index < maxIndex ? index + 1 : 0;
   updateSlide();
@@ -91,10 +93,18 @@ prev.addEventListener('click', () => {
   resetAutoSlide();
 });
 
-// INICIO
-startAutoSlide();
-</script>
+// Ajustar step si cambia el tamaño de ventana
+window.addEventListener('resize', () => {
+  step = window.innerWidth > 768 ? 2 : 1;
+  maxIndex = Math.ceil(slides.length / step) - 1;
+  if(index > maxIndex) index = maxIndex;
+  updateSlide();
+});
 
+// Inicia autoplay
+startAutoSlide();
+
+</script>
 
 
     
