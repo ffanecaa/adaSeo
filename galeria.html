@@ -1,130 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-  <!-- SEO -->
-  <title>Ada Veiga | Galería de Pintura</title>
-  <meta name="description" content="Explora la galería de Ada Veiga, pintora gallega de trazo intenso y mirada propia sobre el color y la figura humana.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Open Graph / Social Preview -->
+  <!-- SEO -->
+  <title>Ada Veiga | Galería de Pintura — Obra Original Gallega</title>
+  <meta name="description" content="Explora la galería de Ada Veiga, pintora gallega de trazo intenso. Obra original sobre figura humana, color expresivo y mirada propia desde Galicia.">
+  <link rel="canonical" href="https://ada-seo-git-main-marta-s-projects-e6827a94.vercel.app/galeria.html">
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Ada Veiga | Galería de Pintura">
   <meta property="og:description" content="Descubre la obra de Ada Veiga en esta galería, donde cada cuadro transmite emoción y fuerza interior a través del color.">
   <meta property="og:image" content="https://ada-seo-git-main-marta-s-projects-e6827a94.vercel.app/images/img_1.jpg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ada-seo-git-main-marta-s-projects-e6827a94.vercel.app/galeria.html">
+  <meta property="og:locale" content="es_ES">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Ada Veiga | Galería de Pintura">
-  <meta name="twitter:description" content="Descubre la obra de Ada Veiga en esta galería, donde cada cuadro transmite emoción y fuerza interior a través del color.">
+  <meta name="twitter:description" content="Descubre la obra de Ada Veiga, pintora gallega de trazo intenso y mirada propia sobre el color.">
   <meta name="twitter:image" content="https://ada-seo-git-main-marta-s-projects-e6827a94.vercel.app/images/img_1.jpg">
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <div class="container_left">
-            <div class="logo">
-                <p class="logo_name">Ada</p>
-                <p class="logo_apell">Veiga</p>
-            </div>
-            <nav class="nav">
-                   <p><a href="./index.html">Inicio</a></p>
-                <p><a href="./galeria.html">Obra</a></p>
-                <p><a href="./ada.html">Ada</a></p>
-            </nav>
-            <p class="copyr">Copyright © All rights reserved 2026.</p>
-        </div>
-       <main class="container_right">
-        <div class="image_slider">
-  <button class="slider_btn prev">‹</button>
-
-  <div class="slider_track">
-     <img src="/images/img_11.jpg"  alt="Pintura de Ada Veiga con colores intensos y figura humana"loading="lazy">
-    <img src="/images/img_5.jpg"  alt="Pintura de Ada Veiga con colores intensos y figura humana"loading="lazy">
-    <img src="/images/img_1.jpg"  alt="Pintura de Ada Veiga con colores intensos y figura humana"loading="lazy">
-    <img src="/images/img_3.jpg"  alt="Pintura de Ada Veiga con colores intensos y figura humana"loading="lazy">
-    <img src="/images/img_2.jpg"  alt="Pintura de Ada Veiga con colores intensos y figura humana"loading="lazy">
-    <img src="/images/img_9.jpg"  alt="Pintura de Ada Veiga con colores intensos y figura humana"loading="lazy">
-   
-    <img src="/images/img_4.jpg"  alt="Pintura de Ada Veiga con colores intensos y figura humana"loading="lazy">
-    <img src="/images/img_8.jpg"  alt="Pintura de Ada Veiga con colores intensos y figura humana"loading="lazy">
-    <img src="/images/img_10.jpg"  alt="Pintura de Ada Veiga con colores intensos y figura humana"loading="lazy">
-    <img src="/images/img_7.jpg"  alt="Pintura de Ada Veiga con colores intensos y figura humana"loading="lazy">
-    <img src="/images/img_6.jpg"  alt="Pintura de Ada Veiga con colores intensos y figura humana"loading="lazy">
-    <img src="/images/msc.png"  alt="Pintura de Ada Veiga con colores intensos y figura humana"loading="lazy">
- 
-  </div>
-
-  <button class="slider_btn next">›</button>
-</div>
-    
-</div>
-
-    </main>
-    </div>
-
-<script>
-    const track = document.querySelector('.slider_track');
-const slides = document.querySelectorAll('.slider_track img');
-const next = document.querySelector('.next');
-const prev = document.querySelector('.prev');
-
-let index = 0;
-let step = window.innerWidth > 768 ? 2 : 1; // 2 en desktop, 1 en móvil
-let maxIndex = Math.ceil(slides.length / step) - 1;
-let autoSlide;
-const intervalTime = 5000;
-
-function updateSlide(){
-  track.style.transform = `translateX(-${index * 100}%)`;
-}
-
-// Reinicia autoplay
-function startAutoSlide(){
-  autoSlide = setInterval(() => {
-    index = index < maxIndex ? index + 1 : 0;
-    updateSlide();
-  }, intervalTime);
-}
-
-function resetAutoSlide(){
-  clearInterval(autoSlide);
-  startAutoSlide();
-}
-
-// Botones
-next.addEventListener('click', () => {
-  index = index < maxIndex ? index + 1 : 0;
-  updateSlide();
-  resetAutoSlide();
-});
-
-prev.addEventListener('click', () => {
-  index = index > 0 ? index - 1 : maxIndex;
-  updateSlide();
-  resetAutoSlide();
-});
-
-// Ajustar step si cambia el tamaño de ventana
-window.addEventListener('resize', () => {
-  step = window.innerWidth > 768 ? 2 : 1;
-  maxIndex = Math.ceil(slides.length / step) - 1;
-  if(index > maxIndex) index = maxIndex;
-  updateSlide();
-});
-
-// Inicia autoplay
-startAutoSlide();
-
-</script>
-
-  <!-- Schema / JSON-LD -->
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -132,17 +31,172 @@ startAutoSlide();
     "name": "Obra de Ada Veiga",
     "creator": {
       "@type": "Person",
-      "name": "Ada Veiga"
+      "name": "Ada Veiga",
+      "jobTitle": "Pintora",
+      "nationality": { "@type": "Country", "name": "España" }
     },
     "artform": "Pintura",
-    "genre": "Arte contemporáneo",
-    "description": "Pintora gallega con más de 50 años de experiencia, trazo intenso y mirada propia sobre el color y la figura humana, comprometida con su entorno y colonias felinas.",
+    "genre": "Arte contemporáneo gallego",
+    "description": "Pintora gallega con décadas de trayectoria. Trazo intenso, figura humana y mirada propia sobre el color, la forma y la vida.",
     "image": [
       "https://ada-seo-git-main-marta-s-projects-e6827a94.vercel.app/images/img_1.jpg",
-      "https://ada-seo-git-main-marta-s-projects-e6827a94.vercel.app/images/img_2.jpg"
+      "https://ada-seo-git-main-marta-s-projects-e6827a94.vercel.app/images/img_2.jpg",
+      "https://ada-seo-git-main-marta-s-projects-e6827a94.vercel.app/images/img_3.jpg"
     ]
   }
   </script>
-    
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <aside class="container_left">
+      <div class="logo">
+        <span class="logo_name">Ada</span>
+        <span class="logo_apell">Veiga</span>
+      </div>
+      <p class="logo_tagline">Pintora gallega</p>
+      <nav class="nav" aria-label="Navegación principal">
+        <p><a href="./index.html">Inicio</a></p>
+        <p><a href="./galeria.html" class="active">Obra</a></p>
+        <p><a href="./ada.html">Ada</a></p>
+      </nav>
+      <p class="copyr">© Ada Veiga 2026</p>
+    </aside>
+
+    <main class="container_right container_right--gallery">
+      <div class="galeria_wrap">
+
+        <div class="galeria_grid" aria-label="Galería de pintura de Ada Veiga">
+
+          <article class="card">
+            <div class="card_img">
+              <img src="/images/img_11.jpg" alt="Pintura de Ada Veiga — figura humana con colores intensos">
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card_img">
+              <img src="/images/img_5.jpg" alt="Pintura de Ada Veiga — expresión cromática y trazo vivo">
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card_img">
+              <img src="/images/img_1.jpg" alt="Pintura de Ada Veiga — obra original gallega">
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card_img">
+              <img src="/images/img_3.jpg" alt="Pintura de Ada Veiga — figura y movimiento">
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card_img">
+              <img src="/images/img_2.jpg" alt="Pintura de Ada Veiga — paleta cálida y gestual">
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card_img">
+              <img src="/images/img_9.jpg" alt="Pintura de Ada Veiga — fuerza interior en el trazo">
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card_img">
+              <img src="/images/img_4.jpg" alt="Pintura de Ada Veiga — obra contemporánea gallega">
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card_img">
+              <img src="/images/img_8.jpg" alt="Pintura de Ada Veiga — emoción contenida en color">
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card_img">
+              <img src="/images/img_10.jpg" alt="Pintura de Ada Veiga — trazo intenso y mirada propia">
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card_img">
+              <img src="/images/img_7.jpg" alt="Pintura de Ada Veiga — figura humana gallega">
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card_img">
+              <img src="/images/img_6.jpg" alt="Pintura de Ada Veiga — libertad e introspección">
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card_img">
+              <img src="/images/msc.png" alt="Pintura de Ada Veiga — colores y formas expresivas">
+            </div>
+          </article>
+
+        </div>
+
+        <nav class="pagination" aria-label="Paginación de la galería">
+          <button class="page_nav prev_page" aria-label="Página anterior">&#8249;</button>
+          <div class="page_numbers"></div>
+          <button class="page_nav next_page" aria-label="Página siguiente">&#8250;</button>
+        </nav>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script>
+    const PER_PAGE = 6;
+    const cards    = Array.from(document.querySelectorAll('.card'));
+    const grid     = document.querySelector('.galeria_grid');
+    const prevBtn  = document.querySelector('.prev_page');
+    const nextBtn  = document.querySelector('.next_page');
+    const numWrap  = document.querySelector('.page_numbers');
+
+    const total = Math.ceil(cards.length / PER_PAGE);
+    let current = 1;
+
+    function buildNumbers() {
+      numWrap.innerHTML = '';
+      for (let i = 1; i <= total; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'page_btn' + (i === current ? ' active' : '');
+        btn.textContent = i;
+        btn.setAttribute('aria-label', `Página ${i}`);
+        btn.addEventListener('click', () => goTo(i));
+        numWrap.appendChild(btn);
+      }
+    }
+
+    function goTo(page) {
+      current = page;
+      const start = (current - 1) * PER_PAGE;
+
+      cards.forEach((card, i) => {
+        card.style.display = (i >= start && i < start + PER_PAGE) ? '' : 'none';
+      });
+
+      prevBtn.disabled = current === 1;
+      nextBtn.disabled = current === total;
+      buildNumbers();
+      grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    prevBtn.addEventListener('click', () => { if (current > 1)     goTo(current - 1); });
+    nextBtn.addEventListener('click', () => { if (current < total) goTo(current + 1); });
+
+    goTo(1);
+  </script>
+
 </body>
 </html>
