@@ -480,6 +480,17 @@ body {
     width: 100%;
   }
 
+  .container_text {
+    font-size: 13.5px;
+    line-height: 24px;
+    gap: 16px;
+  }
+
+  .p_ada {
+    font-size: 13.5px;
+    line-height: 24px;
+  }
+
   .container_quote.quote_ada,
   .p_ada {
     width: 100%;
